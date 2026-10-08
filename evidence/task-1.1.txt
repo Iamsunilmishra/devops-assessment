@@ -1,0 +1,12 @@
+=== Task 1.1 Evidence ===
+$ cat /tmp/devops-test/server.log
+INFO Server started 
+INFO Loading configuratio
+ERROR Database connection failed 
+INFO Retrying connection 
+WARNING High memory usage
+ERROR Request timeout
+ERROR Cache service unavailable
+
+$ grep -c "ERROR" /tmp/devops-test/server.log
+3
