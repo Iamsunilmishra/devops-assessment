@@ -1,0 +1,15 @@
+=== Task 1.3: Linux Log Analysis ===
+
+=== ERROR Messages ===
+3:ERROR Database connection failed
+6:ERROR Request timeout
+7:ERROR Cache service unavailable
+
+=== WARNING Messages ===
+5:WARNING High memory usage
+
+=== Total Errors ===
+3
+
+=== Total Warnings ===
+1
