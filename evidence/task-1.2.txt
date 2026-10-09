@@ -1,0 +1,33 @@
+=== Task 1.2: Backup Script Evidence ===
+
+=== Backup Script ===
+#!/bin/bash
+ 
+SOURCE="/tmp/devops-test/server.log"
+BACKUP_DIR="/tmp/backup"
+DATE=$(date +%Y%m%d)
+DEST="$BACKUP_DIR/server_${DATE}.log"
+ 
+mkdir -p "$BACKUP_DIR"
+ 
+if [ ! -f "$SOURCE" ]; then
+    echo "Error: Source log file not found"
+    exit 1
+fi
+ 
+if cp "$SOURCE" "$DEST"; then
+    echo "Backup Completed: $DEST"
+else
+    echo "Error: Backup failed"
+    exit 1
+fi
+
+=== Backup Execution ===
+Backup Completed: /tmp/backup/server_20261009.log
+
+=== Backup Files ===
+total 4.0K
+-rw-r--r-- 1 Sunil Sunil 185 Oct  9 06:54 server_20261009.log
+
+=== Backup Verification ===
+Backup verification successful
