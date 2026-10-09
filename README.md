@@ -1,8 +1,6 @@
-# Devops practical Assessment
-## overview
-This repository contains the implementation and evidence for the devops practical assessment 
-## phases
-1.Linux and log analysis 
-2.Docker
-3.Kubernetes
-
+# My web app
+A simple web application repository created for the devops assessment
+## purpose 
+-practice git branching and version control
+-maintain clean project files
+-demonstrate git history management
