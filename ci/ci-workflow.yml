@@ -1,0 +1,34 @@
+name: DevOps CI Workflow
+ 
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+ 
+jobs:
+  validate-build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+ 
+      - name: Validate application files
+        run: |
+          test -f docker/html/index.html
+          test -f docker/node-app/server.js
+          echo "Application validation passed"
+ 
+      - name: Build HTML Docker image
+        run: docker build -t my-web:ci -f docker/Dockerfile docker
+ 
+      - name: Build Node.js Docker image
+        run: docker build -t devops-node:ci docker/node-app
+ 
+      - name: Validate Kubernetes manifests
+        run: |
+          test -f k8s/deployment.yaml
+          test -f k8s/service.yaml
+          echo "Kubernetes manifests found"
+ 
